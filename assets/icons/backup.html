@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- FontsAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      
+    <!-- Custom Style CSS-->
+    <link href="styles.css" rel="stylesheet">
+
+    <title>¡Parquee ' ps ! | CRUD</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-primary"> 
+            <div class="container-fluid grid-container">
+                <span class="navbar-brand text-white align-items-center mb-0" href="#">
+                    <img src="icons/parkinlogo2.png" alt="" width="60" class="d-inline-block">
+                    ¡Parquee ' ps!
+                </span>
+                <a href="#" id="userBtnNav" data-bs-toggle="modal" data-bs-target="#modalAdd" type="button" class="btn btn-dark"><i class="fas fa-plus"></i>  Añadir Usuario</a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+            </div>
+            <div class="collapse navbar-collapse" style="padding-left: 15%;" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active nav-textw" aria-current="page" href="#">Estacionamientos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-textw" href="#">Usuarios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-textw" href="#">Procesos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-textw" href="login.html">Cerrar Sesión</a>
+                  </li>
+                </ul>
+              </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container xl my-4">
+          <div class="table-responsive">
+            <table id="tableParking" class="table table-striped table-hover">
+              <thead>
+                <tr class="pb-">
+                  <th>#</th>
+                  <th>Placa</th>						
+                  <th>Tiempo (hs:ms)</th>
+                  <th>Usuario</th>
+                  <th>Estado</th>
+                  <th>Acciónes</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>--</td>
+                  <td>00h:00m</td>
+                  <td>--</td>
+                  <td><span class="status text-avl">&bull;</span>Disponible</td>
+                  <td class="text-center d-flex px-4">
+                    <a href="#" class="text-center text-black btnActions" data-bg-color="#43577a" data-bs-whatever="Editar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Editar" type="button"><i class="material-icons">&#xE8B8;</i></a>
+                    <a href="#" class="text-center text-avl btnActions" data-bg-color="rgb(29, 185, 55)" data-bs-whatever="Asignar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Añadir" type="button"><i class="material-icons">check</i></a>
+                    <a href="#" class="text-center text-failure btnActions" data-bg-color="red" data-bs-whatever="Eliminar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Eliminar" type="button"><i class="material-icons">&#xE5C9;</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>--</td>
+                  <td>00h:00m</td>
+                  <td>--</td>
+                  <td><span class="status text-avl">&bull;</span>Disponible</td>
+                  <td class="text-center d-flex px-4">
+                    <a href="#" class="text-center text-black btnActions" data-bg-color="#43577a" data-bs-whatever="Editar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Editar" type="button"><i class="material-icons">&#xE8B8;</i></a>
+                    <a href="#" class="text-center text-avl btnActions" data-bg-color="rgb(29, 185, 55)" data-bs-whatever="Asignar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Añadir" type="button"><i class="material-icons">check</i></a>
+                    <a href="#" class="text-center text-failure btnActions" data-bg-color="red" data-bs-whatever="Eliminar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Eliminar" type="button"><i class="material-icons">&#xE5C9;</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>--</td>
+                  <td>00h:00m</td>
+                  <td>--</td>
+                  <td><span class="status text-avl">&bull;</span>Disponible</td>
+                  <td class="text-center d-flex px-4">
+                    <a href="#" class="text-center text-black btnActions" data-bg-color="#43577a" data-bs-whatever="Editar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Editar" type="button"><i class="material-icons">&#xE8B8;</i></a>
+                    <a href="#" class="text-center text-avl btnActions" data-bg-color="rgb(29, 185, 55)" data-bs-whatever="Asignar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Añadir" type="button"><i class="material-icons">check</i></a>
+                    <a href="#" class="text-center text-failure btnActions" data-bg-color="red" data-bs-whatever="Eliminar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Eliminar" type="button"><i class="material-icons">&#xE5C9;</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>FRT-241</td>
+                  <td>00h:14m</td>
+                  <td>Cristo Rey</td>
+                  <td><span class="status text-failure">&bull;</span>Ocupado</td>
+                  <td class="text-center d-flex px-4">
+                    <a href="#" class="text-center text-black btnActions" data-bg-color="#43577a" data-bs-whatever="Editar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Editar" type="button"><i class="material-icons">&#xE8B8;</i></a>
+                    <a href="#" class="text-center text-avl btnActions" data-bg-color="rgb(29, 185, 55)" data-bs-whatever="Asignar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Añadir" type="button"><i class="material-icons">check</i></a>
+                    <a href="#" class="text-center text-failure btnActions" data-bg-color="red" data-bs-whatever="Eliminar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Eliminar" type="button"><i class="material-icons">&#xE5C9;</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>--</td>
+                  <td>00h:00m</td>
+                  <td>--</td>
+                  <td><span class="status text-avl">&bull;</span>Disponible</td>
+                  <td class="text-center d-flex px-4">
+                    <a href="#" class="text-center text-black btnActions" data-bg-color="#43577a" data-bs-whatever="Editar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Editar" type="button"><i class="material-icons">&#xE8B8;</i></a>
+                    <a href="#" class="text-center text-avl btnActions" data-bg-color="rgb(29, 185, 55)" data-bs-whatever="Asignar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Añadir" type="button"><i class="material-icons">check</i></a>
+                    <a href="#" class="text-center text-failure btnActions" data-bg-color="red" data-bs-whatever="Eliminar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Eliminar" type="button"><i class="material-icons">&#xE5C9;</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>--</td>
+                  <td>00h:00m</td>
+                  <td>--</td>
+                  <td><span class="status text-avl">&bull;</span>Disponible</td>
+                  <td class="text-center d-flex px-4">
+                    <a href="#" class="text-center text-black btnActions" data-bg-color="#43577a" data-bs-whatever="Editar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Editar" type="button"><i class="material-icons">&#xE8B8;</i></a>
+                    <a href="#" class="text-center text-avl btnActions" data-bg-color="rgb(29, 185, 55)" data-bs-whatever="Asignar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Añadir" type="button"><i class="material-icons">check</i></a>
+                    <a href="#" class="text-center text-failure btnActions" data-bg-color="red" data-bs-whatever="Eliminar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Eliminar" type="button"><i class="material-icons">&#xE5C9;</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>PFV-787</td>
+                  <td>03h:22m</td>
+                  <td>Invitado</td>
+                  <td><span class="status text-failure">&bull;</span>Ocupado</td>
+                  <td class="text-center d-flex px-4">
+                    <a href="#" class="text-center text-black btnActions" data-bg-color="#43577a" data-bs-whatever="Editar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Editar" type="button"><i class="material-icons">&#xE8B8;</i></a>
+                    <a href="#" class="text-center text-avl btnActions" data-bg-color="rgb(29, 185, 55)" data-bs-whatever="Asignar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Añadir" type="button"><i class="material-icons">check</i></a>
+                    <a href="#" class="text-center text-failure btnActions" data-bg-color="red" data-bs-whatever="Eliminar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Eliminar" type="button"><i class="material-icons">&#xE5C9;</i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>DGS-923</td>
+                  <td>10h:16m</td>
+                  <td>Jose Jose</td>
+                  <td><span class="status text-failure">&bull;</span>Ocupado</td>
+                  <td class="text-center d-flex px-4">
+                    <a href="#" class="text-center text-black btnActions" data-bg-color="#43577a" data-bs-whatever="Editar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Editar" type="button"><i class="material-icons">&#xE8B8;</i></a>
+                    <a href="#" class="text-center text-avl btnActions" data-bg-color="rgb(29, 185, 55)" data-bs-whatever="Asignar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Añadir" type="button"><i class="material-icons">check</i></a>
+                    <a href="#" class="text-center text-failure btnActions" data-bg-color="red" data-bs-whatever="Eliminar Espacio" data-bs-toggle="tooltip" data-bs-target="#modalEdit" data-bs-placement="top" title="Eliminar" type="button"><i class="material-icons">&#xE5C9;</i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="clearfix px-5">
+              <div class="hint-text">Mostrando <b>7</b> de <b>30</b> entradas</div>
+              <ul class="pagination">
+                  <li class="page-item disabled"><a href="#">Anterior</a></li>
+                  <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                  <li class="page-item"><a href="#" class="page-link">2</a></li>
+                  <li class="page-item"><a href="#" class="page-link">3</a></li>
+                  <li class="page-item"><a href="#" class="page-link">4</a></li>
+                  <li class="page-item"><a href="#" class="page-link">5</a></li>
+                  <li class="page-item disabled"><a href="#" class="page-link">Siguiente</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      <!------------Modal User---------->
+      <div class="modal fade" id="modalAdd" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-white" id="exampleModalLabel">Añadir Nuevo Usuario</h5>
+              <button type="button btn-secondary" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="user-name" class="col-form-label">Nombre Completo:</label>
+                  <input type="text" class="form-control" id="user-name" placeholder="Nombre Apellido">
+                </div>
+                <div class="mb-3">
+                  <label for="user-cel" class="col-form-label">Número de Celular:</label>
+                  <input type="text" class="form-control" id="user-cel" placeholder="###-#######">
+                </div>
+                <div class="mb-3">
+                  <label for="user-car" class="col-form-label">Placa:</label>
+                  <input type="text" class="form-control" id="user-car" placeholder="XXX-###">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="userBtnNav" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" id="userBtnNav" class="btn btn-success">Añadir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--------------- Modal Edit --------------->
+      <div class="modal fade" id="modalEdit" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-white" id="exampleModalLabel">Asignar Espacio</h5>
+              <button type="button btn-primary" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="user-name" class="col-form-label">Usuario:</label>
+                  <div class="input-group mb-3">
+                    <select class="form-select" id="inputGroupSelect01">
+                    <option selected>Invitado</option>
+                    <option value="1">Cristo Rey</option>
+                    <option value="2">Jose Jose</option>
+                    <option value="3">Joda mani</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="user-cel" class="col-form-label">Tiempo:</label>
+                  <div class="input-group"> 
+                    <label class="input-group-text" for="inputGroupSelect01">Horas:</label>
+                    <input id="horas" type="number" min="0" max="24" class="form-control" placeholder="Horas--">
+                  </div>
+                  <div class="input-group"> 
+                    <label class="input-group-text" for="inputGroupSelect01">Minutos:</label>
+                    <input id="mins" type="number" min="0" max="59" class="form-control" placeholder="Minutos--">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="userBtnNav" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" id="userBtnNav" class="btn btn-success">Asignar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+    </footer>
+      <!-- JQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src='js/main.js'></script>
+  </body>
+</html>
